@@ -2,15 +2,16 @@ import * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
+import PaginationView from './views/paginationView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { async } from 'regenerator-runtime/runtime';
 
 // const recipeContainer = document.querySelector('.recipe');
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 const controlRecipes = async function () {
   try {
@@ -42,12 +43,14 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
     // resultsView.render(model.state.search.results);
     resultsView.render(model.getSearchResultsPage());
+
+    // render pagination
+    PaginationView.render(model.state.search);
+    console.log(model.state.search);
   } catch (error) {
     console.log(error);
   }
 };
-
-// controlSearchResults();
 
 //id link hashachange
 const init = function () {
