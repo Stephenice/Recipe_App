@@ -8,7 +8,7 @@ class PaginationView extends View {
   _generateMarkup() {
     const curPage = this._data.page;
     const numPages = Math.ceil(
-      curPage.results.length / this._data.resultsPerPage
+      this._data.results.length / this._data.resultsPerPage
     );
     console.log(numPages);
     // page 1
@@ -23,7 +23,7 @@ class PaginationView extends View {
     }
 
     // last page
-    if (curPage.page === numPages && numPages > 1) {
+    if (curPage === numPages && numPages > 1) {
       return `
       <button class="btn--inline pagination__btn--prev">
             <svg class="search__icon">
@@ -35,7 +35,7 @@ class PaginationView extends View {
     }
 
     //other page
-    if (curPage.page < numPages) {
+    if (curPage < numPages) {
       return `
       <button class="btn--inline pagination__btn--prev">
             <svg class="search__icon">
