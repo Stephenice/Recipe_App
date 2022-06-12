@@ -43,18 +43,21 @@ const controlSearchResults = async function () {
 
     await model.loadSearchResults(query);
     // resultsView.render(model.state.search.results);
-    resultsView.render(model.getSearchResultsPage(6));
+    resultsView.render(model.getSearchResultsPage(1));
 
     // render pagination
     PaginationView.render(model.state.search);
-    console.log(model.state.search);
   } catch (error) {
     console.log(error);
   }
 };
 
-const controlPagination = function () {
-  console.log('pag control');
+const controlPagination = function (goToPage) {
+  // new pagination
+  resultsView.render(model.getSearchResultsPage(goToPage));
+
+  // render pagination btn
+  PaginationView.render(model.state.search);
 };
 
 //id link hashachange
