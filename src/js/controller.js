@@ -7,6 +7,7 @@ import PaginationView from './views/paginationView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { async } from 'regenerator-runtime/runtime';
+import paginationView from './views/paginationView.js';
 
 // const recipeContainer = document.querySelector('.recipe');
 // if (module.hot) {
@@ -52,10 +53,15 @@ const controlSearchResults = async function () {
   }
 };
 
+const controlPagination = function () {
+  console.log('pag control');
+};
+
 //id link hashachange
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
   SearchView.addHandlerSearch(controlSearchResults);
+  paginationView.addHandlerClick(controlPagination);
 };
 
 init();
