@@ -60,9 +60,9 @@ const controlPagination = function (goToPage) {
   PaginationView.render(model.state.search);
 };
 
-const controlServings = function () {
+const controlServings = function (newServings) {
   // update d recipe serving(in state)
-  model.updateServings(8);
+  model.updateServings(newServings);
 
   // update recipe view
   recipeView.render(model.state.recipe);
