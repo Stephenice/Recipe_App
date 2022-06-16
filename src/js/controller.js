@@ -2,6 +2,7 @@ import * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
+import bookmarksView from './views/bookmarksView.js';
 import PaginationView from './views/paginationView.js';
 
 import 'core-js/stable';
@@ -24,6 +25,7 @@ const controlRecipes = async function () {
 
     // 0:update result view to mark selected search result
     resultsView.update(model.getSearchResultsPage());
+    bookmarksView.update(model.state.bookmarks);
 
     // 1: load recipe
     await model.loadRecipe(id);
@@ -72,11 +74,13 @@ const controlServings = function (newServings) {
 };
 
 const controlAddBookmark = function () {
+  //1 add/ remove bookmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
   else model.deleteBookmark(model.state.recipe.id);
-
-  console.log(model.state.recipe);
+  // update recipe view
   recipeView.update(model.state.recipe);
+  // render bookmarks
+  bookmarksView.render(model.state.bookmarks);
 };
 
 //id link hashachange
