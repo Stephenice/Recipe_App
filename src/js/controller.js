@@ -88,6 +88,12 @@ const controlBookmarks = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+const controlAddRecipe = function (newRecipe) {
+  console.log(newRecipe);
+
+  // upload the new recipe data
+};
+
 //id link hashachange
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -96,6 +102,7 @@ const init = function () {
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
   // controlServings();
 };
 
