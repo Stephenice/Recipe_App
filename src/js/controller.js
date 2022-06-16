@@ -83,8 +83,13 @@ const controlAddBookmark = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+const controlBookmarks = function name() {
+  bookmarksView.render(model.state.bookmarks);
+};
+
 //id link hashachange
 const init = function () {
+  bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServing(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
