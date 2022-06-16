@@ -88,10 +88,14 @@ const controlBookmarks = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
-const controlAddRecipe = function (newRecipe) {
-  console.log(newRecipe);
-
-  // upload the new recipe data
+const controlAddRecipe = async function (newRecipe) {
+  try {
+    // upload the new recipe data
+    await model.uplodRecipe(newRecipe);
+  } catch (error) {
+    console.error('', error);
+    addRecipeView.renderError(error.message);
+  }
 };
 
 //id link hashachange

@@ -2,6 +2,7 @@ import { async } from 'regenerator-runtime';
 import { API_URL } from './config';
 import { getJSON } from './helper';
 import { RES_PER_PAGE } from './config';
+// import { entries } from 'core-js/core/array';
 
 export const state = {
   recipe: {},
@@ -117,3 +118,19 @@ const clearBookmarks = function () {
 };
 
 // clearBookmarks();
+
+export const uplodRecipe = async function (newRecipe) {
+  try {
+    const ingredients = Object.entries(newRecipe)
+      .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
+      .map(ing => {
+        const ingArr = ing[1].replaceAll(' ', '').split(',');
+        if (ingArr.length !== 3) throw new Error('wrong ingredient format');
+        const [quantity, unit, description] = ingArr;
+        return { quantity: quantity ? +quantity : null, unit, description };
+      });
+    console.log(ingredients);
+  } catch (err) {
+    throw err;
+  }
+};
