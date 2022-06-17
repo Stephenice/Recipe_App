@@ -16,7 +16,6 @@ export const getJSON = async function (url) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     return data;
   } catch (error) {
-    // console.log(error);
     throw error;
   }
 };
@@ -27,7 +26,7 @@ export const sendJSON = async function (url, uploadData) {
     const fetchPro = fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'appliation/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(uploadData),
     });
@@ -37,7 +36,6 @@ export const sendJSON = async function (url, uploadData) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     return data;
   } catch (error) {
-    // console.log(error);
     throw error;
   }
 };
