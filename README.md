@@ -2,6 +2,8 @@
 
 O'Recipe is an interactive recipe app where users can search for over 1 million recipes. Users can search for a specific recipe, update the number of servings, bookmark favorite recipes, and users can create their own recipes.
 
+< href="#" target="\_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+
 ## Installation
 
 The easiest way to view this project demo [click here](https://recipeshop.netlify.app/).
