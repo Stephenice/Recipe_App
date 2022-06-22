@@ -19,6 +19,9 @@ No frameworks were used in the development of this application. All functionalit
 
 Webpack was used as the module bundler to incorporate Axios for fetching as well as BABEL for compiling the next-gen JavaScript.
 
+- Architectural Pattern
+  Model–view–controller was used to implement user interfaces, data, and controlling logic so its easy to maintain and add new functionality with ease. feel free to dive into the code.
+
 ## Installation
 
 The easiest way to view this project demo [click here](https://recipeshop.netlify.app/).
