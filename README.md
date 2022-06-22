@@ -1,6 +1,6 @@
 # Recipe Shop App
 
-O'Recipe is an interactive recipe app where users can search for over 1 million recipes. Users can search for a specific recipe, update the number of servings, bookmark favorite recipes, and users can create their own recipes. Favorite recipes are stored in local storage so no database was required for this application.
+O'Recipe is an interactive recipe app where users can search for over 1 million recipes using the Food2Fork API. Users can search for a specific recipe, update the number of servings, bookmark favorite recipes, and users can create their own recipes. Favorite recipes are stored in local storage so no database was required for this application.
 
 ## Technologies Used
 
