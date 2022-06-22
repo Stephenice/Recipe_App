@@ -1,4 +1,4 @@
-# O'Recipe Shop App
+# Recipe Shop App
 
 O'Recipe is an interactive recipe app where users can search for over 1 million recipes. Users can search for a specific recipe, update the number of servings, bookmark favorite recipes, and users can create their own recipes. Favorite recipes are stored in local storage so no database was required for this application.
 
@@ -20,7 +20,8 @@ No frameworks were used in the development of this application. All functionalit
 Webpack was used as the module bundler to incorporate Axios for fetching as well as BABEL for compiling the next-gen JavaScript.
 
 - Architectural Pattern
-  Model–view–controller was used to implement user interfaces, data, and controlling logic so its easy to maintain and add new functionality with ease. feel free to dive into the code.
+
+Model–view–controller was used to implement user interfaces, data, and controlling logic so its easy to maintain and add new functionality with ease. feel free to dive into the code.
 
 ## Installation
 
